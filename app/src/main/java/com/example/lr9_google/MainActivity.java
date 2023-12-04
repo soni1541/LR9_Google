@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,6 +19,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInApi;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 GoogleSignInLauncher.launch(intent);
             }
         });
+
     }
+
+
     ActivityResultLauncher<Intent> GoogleSignInLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
@@ -58,15 +63,15 @@ public class MainActivity extends AppCompatActivity {
                     String name = account.getDisplayName();
                     String email = account.getEmail();
 
-//                    Intent i = new Intent(getApplicationContext(), MainActivity2.class);
-//                    i.putExtra("username", name);
-//                    i.putExtra("email", email);
-//                    startActivity(i);
+                    Intent i = new Intent(getApplicationContext(), MainActivity2.class);
+                    i.putExtra("username", name);
+                    i.putExtra("email", email);
+                    startActivity(i);
 
-                    Toast toast_account =
-                            Toast.makeText(getApplicationContext(),
-                                    "Добро пожаловать, " + name + "(" + email + ")", Toast.LENGTH_LONG);
-                    toast_account.show();
+//                    Toast toast_account =
+//                            Toast.makeText(getApplicationContext(),
+//                                    "Добро пожаловать, " + name + "(" + email + ")", Toast.LENGTH_LONG);
+//                    toast_account.show();
                 }
 
             } catch (ApiException e) {
