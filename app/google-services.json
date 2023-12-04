@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "94612828628",
+    "project_id": "lr9-c0537",
+    "storage_bucket": "lr9-c0537.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94612828628:android:ad9b93aee1f2b00f28e641",
+        "android_client_info": {
+          "package_name": "com.example.lr9_google"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH4hF4Z1nuMA0KZ-aOlh7yRxV5LpVBqvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

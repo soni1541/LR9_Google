@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = gsc.getSignInIntent();
-
+                GoogleSignInLauncher.launch(intent);
             }
         });
     }
@@ -57,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
                 if (account != null) {
                     String name = account.getDisplayName();
                     String email = account.getEmail();
+
+//                    Intent i = new Intent(getApplicationContext(), MainActivity2.class);
+//                    i.putExtra("username", name);
+//                    i.putExtra("email", email);
+//                    startActivity(i);
+
                     Toast toast_account =
                             Toast.makeText(getApplicationContext(),
                                     "Добро пожаловать, " + name + "(" + email + ")", Toast.LENGTH_LONG);
